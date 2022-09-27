@@ -60,7 +60,7 @@ $ python line_count.py --dir \Users\doc
 The directory does not exist
 ```
 
-# Pylint
+## Pylint
 The code in this repository passed pylint:
 ```
 $ pylint analog_devices/
