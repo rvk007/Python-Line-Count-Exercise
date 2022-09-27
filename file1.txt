@@ -1,0 +1,25 @@
+import os
+
+def line_count(directory, extension):
+    # if directory not found
+    if not os.path.exists(directory):
+        print('The directory does not exist')
+        return
+
+    line_data = []
+    for filename in glob.glob(f'{extension}', recursive=True):
+        with open(os.path.join(directory,filename), 'r') as fp:
+            line_data.append([os.path.join(directory,filename),len(fp.readlines()])
+
+    print(line_data)
+
+
+if __name__ == '__main__':
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--dir', help='directory')
+    parser.add_argument('--ext', default='.txt', help='file extension')
+
+    args = parser.parse_args()
+    line_count(args.dir, args.ext)

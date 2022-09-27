@@ -1,0 +1,7 @@
+import os
+
+def line_count(directory, extension):
+    # if directory not found
+    if not os.path.exists(directory):
+        print('The directory does not exist')
+        return

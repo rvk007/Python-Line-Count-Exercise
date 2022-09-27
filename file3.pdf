@@ -1,0 +1,6 @@
+line_data = []
+for filename in glob.glob(f'{extension}', recursive=True):
+    with open(os.path.join(directory,filename), 'r') as fp:
+        line_data.append([os.path.join(directory,filename),len(fp.readlines()])
+
+print(line_data)
